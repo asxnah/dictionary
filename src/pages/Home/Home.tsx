@@ -82,6 +82,8 @@ const Home = () => {
 						placeholder="Найти слово"
 						value={value}
 						onChange={(e) => setValue(e.target.value)}
+						minLength={1}
+						maxLength={50}
 						required
 					/>
 					<button type="submit">
