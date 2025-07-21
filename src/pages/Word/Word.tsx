@@ -132,28 +132,46 @@ const Word = () => {
 								? result.def?.[0]?.text
 								: 'Такого слова в русском языке не существует'}
 						</h1>
+						<p className="grey">
+							{result.def?.[0]?.pos === 'noun'
+								? 'существительное'
+								: result.def?.[0]?.pos === 'adjective'
+								? 'прилагательное'
+								: result.def?.[0]?.pos === 'verb'
+								? 'глагол'
+								: result.def?.[0]?.pos === 'adverb'
+								? 'наречие'
+								: result.def?.[0]?.pos === 'pronoun'
+								? 'местоимение'
+								: result.def?.[0]?.pos === 'preposition'
+								? 'предлог'
+								: result.def?.[0]?.pos === 'conjunction'
+								? 'союз'
+								: result.def?.[0]?.pos === 'interjection'
+								? 'междометие'
+								: ''}
+						</p>
 					</section>
 					<section className={`${s.meaning} sect`}>
-						<h2>Значение</h2>
+						<h2>Синонимы</h2>
 						<ol>
-							{result.def?.[0]?.tr?.map((item) => (
-								<li key={item.text}>
-									<span>{item.text?.toLowerCase()}</span>
-								</li>
-							)) || <li>Тебе словарь для чего?</li>}
+							{result.def?.[0]?.tr?.map(
+								(item, i) =>
+									i <= 2 && (
+										<li key={item.text}>
+											<span>{item.text?.toLowerCase()}</span>
+											{item.syn?.map(
+												(synonym, i) =>
+													i <= 1 && (
+														<span key={synonym.text} className="grey">
+															{synonym.text.toLowerCase()}
+														</span>
+													)
+											)}
+										</li>
+									)
+							) || <li>Тебе словарь для чего?</li>}
 						</ol>
-					</section>
-					<section className={`${s.synonyms} sect`}>
-						<h3>Синонимы</h3>
-						<ul>
-							{result.def?.[0]?.tr?.[0]?.syn?.map((synonym) => (
-								<li key={synonym.text}>
-									<button onClick={() => navigate(`/word/${synonym.text}`)}>
-										{synonym.text.toLowerCase()}
-									</button>
-								</li>
-							)) || <li>-</li>}
-						</ul>
 					</section>
 				</>
 			)}
