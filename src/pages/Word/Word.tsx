@@ -45,7 +45,6 @@ const Word = () => {
 	>(null);
 
 	const [result, setResult] = useState<ApiResponse | null>(null);
-	const key = import.meta.env.VITE_API_KEY;
 
 	useEffect(() => {
 		if (!normalizedParam) return;
@@ -54,12 +53,13 @@ const Word = () => {
 			setLocalResult(data[normalizedParam as keyof typeof data]);
 		} else {
 			setLocalResult(null);
-			getWord(normalizedParam);
+			getWord(normalizedParam, import.meta.env.VITE_API_KEY);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [normalizedParam]);
 
-	const getWord = async (word: string) => {
+	const getWord = async (word: string, key: string) => {
+		if (!key) console.log('API key is not set');
+
 		try {
 			const fetchedWord = await axios.get(
 				`https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${key}&lang=ru-ru&text=${word}`
