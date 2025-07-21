@@ -45,7 +45,7 @@ const Word = () => {
 	>(null);
 
 	const [result, setResult] = useState<ApiResponse | null>(null);
-	const key = import.meta.env.VITE_YANDEX_API_KEY;
+	const key = import.meta.env.VITE_API_KEY;
 
 	useEffect(() => {
 		if (!normalizedParam) return;
@@ -56,7 +56,7 @@ const Word = () => {
 			setLocalResult(null);
 			getWord(normalizedParam);
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [normalizedParam]);
 
 	const getWord = async (word: string) => {
