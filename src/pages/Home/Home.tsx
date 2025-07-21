@@ -78,13 +78,13 @@ const Home = () => {
 				<div className={s.input}>
 					<input
 						type="text"
-						name="search"
+						name="input"
 						placeholder="Найти слово"
 						value={value}
 						onChange={(e) => setValue(e.target.value)}
 						required
 					/>
-					<button type="submit" role="search">
+					<button type="submit">
 						<SearchIcon />
 					</button>
 				</div>
