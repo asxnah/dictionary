@@ -45,7 +45,7 @@ const Word = () => {
 	>(null);
 
 	const [result, setResult] = useState<ApiResponse | null>(null);
-	const key = import.meta.env.YANDEX_API_KEY;
+	const key = import.meta.env.VITE_API_KEY;
 
 	useEffect(() => {
 		if (!normalizedParam) return;
