@@ -34,7 +34,7 @@
 	}
 	.input input::placeholder {
 		color: var(--grey);
-		font-size: 16px;
+		font-size: var(--p);
 		font-weight: 400;
 	}
 	.input input:focus-visible {
@@ -81,6 +81,10 @@
 
 	div h2 {
 		margin-bottom: 4px;
+	}
+
+	ul {
+		margin: 0;
 	}
 }
 
