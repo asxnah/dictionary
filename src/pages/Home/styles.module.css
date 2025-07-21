@@ -5,6 +5,10 @@
 	flex-direction: column;
 	gap: 28px;
 
+	button {
+		margin-top: auto;
+	}
+
 	.input {
 		display: flex;
 		align-items: center;

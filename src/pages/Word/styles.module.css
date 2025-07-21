@@ -4,6 +4,9 @@
 		margin: 0;
 		padding-inline-start: 24px;
 	}
+	button {
+		margin-top: auto;
+	}
 }
 
 .word {
@@ -25,8 +28,6 @@
 	gap: 20px;
 
 	ol {
-		padding: 0;
-
 		display: grid;
 		gap: 12px;
 
@@ -36,7 +37,7 @@
 	ol li {
 		counter-increment: custom-counter;
 		position: relative;
-		padding-left: 16px;
+		padding-left: 24px;
 	}
 	ol li::before {
 		content: counter(custom-counter);
