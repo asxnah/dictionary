@@ -1,0 +1,13 @@
+#root {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 36px;
+
+	background-color: #fdfdfd;
+}
+@media (width <= 800px) {
+	#root {
+		gap: 24px;
+	}
+}

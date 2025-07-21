@@ -1,0 +1,100 @@
+.main {
+	ul,
+	ol {
+		margin: 0;
+		padding-inline-start: 24px;
+	}
+}
+
+.word {
+	width: 60%;
+}
+@media (width <= 1540px) {
+	.word {
+		width: 80%;
+	}
+}
+@media (width <= 800px) {
+	.word {
+		width: 100%;
+	}
+}
+
+.meaning {
+	flex-direction: column;
+	gap: 20px;
+
+	ol {
+		padding: 0;
+
+		display: grid;
+		gap: 12px;
+
+		list-style-type: none;
+		counter-reset: custom-counter;
+	}
+	ol li {
+		counter-increment: custom-counter;
+		position: relative;
+		padding-left: 16px;
+	}
+	ol li::before {
+		content: counter(custom-counter);
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	span {
+		display: block;
+	}
+	span:first-child {
+		margin-bottom: 8px;
+	}
+}
+
+.synonyms,
+.nyms {
+	flex-direction: column;
+	gap: 16px;
+
+	div {
+		flex: 1 0 0;
+
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		align-content: flex-start;
+		gap: 8px;
+	}
+
+	button {
+		padding: 12px 16px;
+
+		flex: 0;
+
+		border-radius: 12px;
+		border: 1px solid var(--stroke);
+		background-color: var(--white);
+		transition: all 0.3s;
+	}
+	button:active {
+		background-color: var(--hover);
+	}
+
+	@media (hover: hover) {
+		button:hover {
+			background-color: var(--hover);
+		}
+	}
+}
