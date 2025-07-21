@@ -68,7 +68,12 @@ const Home = () => {
 
 	return (
 		<main className={s.main}>
-			<form onSubmit={() => navigate(`/word/${value}`)}>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+					navigate(`/word/${value}`);
+				}}
+			>
 				<h1>Словарь</h1>
 				<div className={s.input}>
 					<input
