@@ -1,0 +1,52 @@
+.main {
+	div {
+		width: 100%;
+
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	ul {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 16px;
+	}
+
+	li {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	li p {
+		text-align: center;
+		font-size: var(--h3);
+	}
+	li p:last-child {
+		font-size: var(--p);
+	}
+
+	button {
+		margin-top: auto;
+	}
+}
+@media (width <= 1540px) {
+	ul {
+		grid-template-columns: repeat(4, 1fr) !important;
+	}
+}
+@media (width <= 800px) {
+	ul {
+		grid-template-columns: repeat(3, 1fr) !important;
+	}
+}
+@media (width <= 500px) {
+	ul {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}

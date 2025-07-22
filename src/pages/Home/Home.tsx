@@ -74,7 +74,14 @@ const Home = () => {
 					navigate(`/word/${value}`);
 				}}
 			>
-				<h1>Словарь</h1>
+				<div className="heading">
+					<h1>Словарь</h1>
+					<button className="grey" onClick={() => navigate('/abc')}>
+						{gifted
+							? 'Слишком рано для слов? Попробуй букварь!'
+							: 'Слишком тупой для значений слов? Ссылка на букварь здесь'}
+					</button>
+				</div>
 				<div className={s.input}>
 					<input
 						type="text"

@@ -6,7 +6,9 @@
 	gap: 28px;
 
 	button {
-		margin-top: auto;
+		text-align: left;
+		text-decoration: underline;
+		text-underline-offset: 4px;
 	}
 
 	.input {
